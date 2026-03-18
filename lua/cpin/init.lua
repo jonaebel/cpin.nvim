@@ -1,12 +1,14 @@
 local M = {}
 
+local cli = require("cpin.cli")
+
+--- Setup cpin.
+--- @param opts table  { binary?: string, global?: boolean }
 function M.setup(opts)
     opts = opts or {}
-    print("Hello from cpin!")
+    cli.setup(opts)
 end
 
-function M.hello()
-    print("cpin plugin is working!")
-end
+M.cli = cli
 
 return M
